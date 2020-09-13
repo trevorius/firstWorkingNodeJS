@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <!--JQUERY-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        
+    </head>
+    <body>
+        <div>
+            <h1>Test de la mort</h1>
+            <hr/>
+            <form id="form"> <!--action="/htmldata"  method="POST"-->
+                <input id="apartments"  name="apartments" type="number" value="" min="1" max="999" maxlength="3" >
+                <input id="var2" name="var2" type="number" value="" placeholder="number">
+            </form>
+            <h2 id="result">Resultat</h2>
+        </div>
+        <script>
+            
+
+
+            //post
+            $("input[type='number']").change(function(event) {
+                console.log("nombre pas envoye" + $('#apartments').val())
+                $.post("<herokuappurl>/htmldata", {//heroku app url don't forget to use cors in app.js
+                        apartments: $('#apartments').val(),
+                        var2: $('#var2').val(),
+                    },
+
+                    //callback results of calcul into object data.
+                    function(data){
+                        console.log("Result received: " + data.result)
+                        $("#result").text(data.result + " est le resultat" + "et la somme deux resultats est : " + data.somme);
+
+                });
+            
+            });
+        </script>
+    </body>
+</html>

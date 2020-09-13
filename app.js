@@ -36,7 +36,6 @@ app.get("/data", (req,res) => {
     var form1 = {type: "Residentiel", numberApartments: "500" }
     res.json(form1)
 
-   // res.send('Hello from users')
 })
 
 
