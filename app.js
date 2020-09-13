@@ -3,13 +3,14 @@ const app = express()
 const morgan = require('morgan')
 
 const bodyParser = require('body-parser')
+const cors = require('cors')
 
 app.use(bodyParser.urlencoded({extended: false})) //middleware to process request easier
 
 app.use(express.static('./public'))//allows public .html to work
 
 app.use(morgan('short')) //combined or short options
-
+app.use(cors())//enables all cors requests
 
 app.get("/", (req,res) => {
     console.log("Responding to root route")

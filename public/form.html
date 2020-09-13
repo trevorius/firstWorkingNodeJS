@@ -24,7 +24,7 @@
             //post
             $("input[type='number']").change(function(event) {
                 console.log("nombre pas envoye" + $('#apartments').val())
-                $.post("/htmldata", {
+                $.post("https://intense-reef-95785.herokuapp.com/htmldata", {
                         apartments: $('#apartments').val(),
                         var2: $('#var2').val(),
                     },
