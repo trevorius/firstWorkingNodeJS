@@ -22,7 +22,7 @@
             //post
             $("input[type='number']").change(function(event) {
                 console.log("nombre pas envoye" + $('#apartments').val())
-                $.post("/htmldata", {
+                $.post("<app.url>/htmldata", {
                         apartments: $('#apartments').val(),
                         var2: $('#var2').val(),
                     },
