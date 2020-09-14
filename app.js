@@ -7,7 +7,7 @@ const cors = require('cors')
 
 app.use(bodyParser.urlencoded({extended: false})) //middleware to process request easier
 
-app.use(express.static('./public'))//allows public .html to work
+app.use(express.static('../'))//allows public .html to work
 
 app.use(morgan('short')) //combined or short options
 app.use(cors())//enables all cors requests
